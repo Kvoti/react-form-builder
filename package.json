@@ -1,0 +1,25 @@
+{
+  "name": "react-form-builder",
+  "version": "1.0.0",
+  "description": "React form builder",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kvoti/react-form-builder.git"
+  },
+  "keywords": [
+    "react",
+    "forms",
+    "component",
+    "builder"
+  ],
+  "author": "Mark Allison",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kvoti/react-form-builder/issues"
+  },
+  "homepage": "https://github.com/Kvoti/react-form-builder#readme"
+}
