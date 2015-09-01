@@ -4,6 +4,7 @@ import { controlRowErrorClassNames } from '../../../components/editors/renderer/
 import ControlValidationIcon from '../../../components/editors/renderer/ControlValidationIcon';
 
 export class Renderer extends React.Component {
+  static displayName = 'ChoiceRenderer'
 
   render() {
     let question = this.props.question;

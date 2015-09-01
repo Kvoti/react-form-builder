@@ -5,6 +5,8 @@ import { controlRowErrorClassNames } from '../../../components/editors/renderer/
 import ControlValidationIcon from '../../../components/editors/renderer/ControlValidationIcon';
 
 export class Renderer extends React.Component {
+  static displayName = 'ScoreGroupRenderer'
+  
   render() {
     let question = this.props.question;
     let answer = this.props.value;

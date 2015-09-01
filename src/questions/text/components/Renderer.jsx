@@ -7,6 +7,8 @@ import ControlValidationIcon from '../../../components/editors/renderer/ControlV
 import { controlRowErrorClassNames } from '../../../components/editors/renderer/utils';
 
 export class Renderer extends React.Component {
+  static displayName = 'TextRenderer'
+
   constructor(props) {
     super(props);
     this.ID = getID();
