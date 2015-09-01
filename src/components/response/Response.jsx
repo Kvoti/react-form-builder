@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import getQuestion from '../../questions';
 
 export default class Response extends React.Component {
   render() {
@@ -11,6 +12,13 @@ export default class Response extends React.Component {
   }
 
   _renderResponse = (question, index) => {
-    return null;
+    let props = {
+      key: question.question,
+      number: index + 1,
+      question,
+      response: this.props.responses[index]
+    };
+    let meta = getQuestion(question);
+    return React.createElement(meta.Response, props);
   }
 }

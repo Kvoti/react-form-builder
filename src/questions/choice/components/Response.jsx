@@ -1,28 +1,18 @@
 import React, { PropTypes } from 'react';
 
-export default class Choice extends React.Component {
+export class Response extends React.Component {
   static propTypes = {
-    question: PropTypes.string.isRequired,
-    isRequired: PropTypes.bool,
-    isMultiple: PropTypes.bool,
-    options: PropTypes.arrayOf(
-      PropTypes.string
-    ).isRequired,
-    response: PropTypes.shape({
-      choice: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.arrayOf(PropTypes.string)
-      ]).isRequired,
-      otherText: PropTypes.string
-    })
+    // TODO share with submit component
   }
 
+  static displayName = 'ChoiceResponse'
+  
   render() {
     return (
       <div>
-        <p>Q{this.props.number}. {this.props.question}{this.props.isRequired ? ' *' : null}</p>
+        <p>Q{this.props.number}. {this.props.question.question}{this.props.isRequired ? ' *' : null}</p>
         <ul>
-          {this.props.options.map(option => {
+          {this.props.question.choice.options.map(option => {
             return (
               <li>
               {option}

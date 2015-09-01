@@ -1,47 +1,41 @@
 import React, { PropTypes } from 'react';
 
-export default class Response extends React.Component {
+export class Response extends React.Component {
 
   static propTypes = {
-    question: PropTypes.string.isRequired,
-    isRequired: PropTypes.bool,
-    labels: PropTypes.arrayOf(
-      PropTypes.string
-    ).isRequired,
-    items: PropTypes.arrayOf(
-      PropTypes.string
-    ).isRequired
-    // TODO response:
+    // TODO
   }
 
+  static displayName = 'ScoreGroupResponse'
+  
   render() {
     console.log(this.props.response);
     return (
       <table className="table table-striped" style={{width: 'auto'}}>
         <caption>
-          {this.props.question}{this.props.isRequired ? ' *' : ''}
+          {this.props.question.question}{this.props.isRequired ? ' *' : ''}
         </caption>
         <thead>
           <tr>
             <th></th>
-            {this.props.labels.map((label, i) => {
+            {this.props.question.scoregroup.labels.map((label, i) => {
               return (
-                <th key={i}>{label}</th>
+                <th key={i}>{label.label}</th>
               );
              })}
           </tr>
         </thead>
         <tbody>
-          {this.props.items.map((item, i) => {
+          {this.props.question.scoregroup.items.map((item, i) => {
             return (
               <tr>
               <td>
-              {item}
+              {item.text}
               </td>
-              {this.props.labels.map((label, j) => {
+              {this.props.question.scoregroup.labels.map((label, j) => {
                 return (
                   <td>
-                  {this.props.response[i] === label ? ' \u2713' : null}
+                  {this.props.response[i] === label.label ? ' \u2713' : null}
                   </td>
                 );
               })}
