@@ -29,6 +29,7 @@ export class Renderer extends React.Component {
          question.choice.options.get().map(option => {
             return (
               <div
+                      key={option}
                       className={controlRowErrorClassNames(answer.choice.errors, {[type]: true})}
                       >
               <label key={option}>

@@ -38,7 +38,7 @@ export class Renderer extends React.Component {
               </td>
               {question.scoregroup.labels.get() && question.scoregroup.labels.get().map(label => {
                 return (
-                  <td>
+                  <td key={label.label}>
                   <input
                   name={item.text}
                   type="radio"
