@@ -69,10 +69,7 @@ export default class Form extends React.Component {
 
   _getSchema(form) {
     let values = new schema.ManagedObject(
-      schema.array(),  // TODO shema.tuple or schema.struct better?
-      {
-        onChange: () => this.forceUpdate()
-      }
+      schema.array()  // TODO shema.tuple or schema.struct better?
     );
     form.managed.questions.members.forEach(([j, q], i) => {
       let question = getQuestion(q);
@@ -82,9 +79,10 @@ export default class Form extends React.Component {
         question.getAnswerSchema(q.get())
       );
     });
-    // TODO this is a hack until I sort out initial values vs data, URGH!
+    // TODO these are hacks until I sort out initial values vs data, URGH!
     values._isBound = {};
     values._validate();
+    values._onChange = () => this.forceUpdate();
     //////////////////////////////////////////////////////////////////////
     console.log('schema', values);
     return values;
