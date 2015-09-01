@@ -53,7 +53,7 @@ export class Renderer extends React.Component {
            })}
         </tbody>
       </table>
-      <ControlValidationIcon controlID={this.ID} errors={answer.errors} />
+      <ControlValidationIcon controlID="TODO" errors={answer.errors} />
       <ControlErrors errors={answer.errors}/>
       </div>
     );

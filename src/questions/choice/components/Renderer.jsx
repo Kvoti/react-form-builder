@@ -23,7 +23,7 @@ export class Renderer extends React.Component {
              }
              {question.isRequired.get() ? ' *' : ''}
           </label>
-          <ControlValidationIcon controlID={this.ID} errors={answer.choice.errors} />
+          <ControlValidationIcon controlID="TODO" errors={answer.choice.errors} />
         </div>
         {question.choice.options.get() ?
          question.choice.options.get().map(option => {
